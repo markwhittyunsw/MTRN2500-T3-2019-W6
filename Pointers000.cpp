@@ -1,6 +1,5 @@
 #include <iostream>
 #include <iomanip>
-#include <conio.h>
 
 using namespace std;
 
@@ -15,14 +14,14 @@ int main()
 	cout << "Address of a[1] in hex is \t" << hex << &a[1]  << endl;
 	cout << "Address of the array in hex is \t" << hex << a << endl;
 
-	_getch();
+    cout << endl;
 
 	IntPtr = a;
 	cout << "Address of IntPtr in hex is \t" << hex << &IntPtr << endl;
 	cout << "Pointer's value is \t\t" << hex << IntPtr << endl;
 	cout << "Pointer + 1  is \t\t" << hex << (IntPtr+1) << endl;
 
-	_getch();
+	cout << endl;
 
 	int *newIntPtr = new(int);
 	*newIntPtr = 5;
@@ -34,13 +33,13 @@ int main()
 
 	delete newIntPtr;
 
-	_getch();
+	cout << endl;
 
 	cout << "Address of newIntPtr in hex is \t" << hex << &newIntPtr << endl;
 	cout << "newIntPtr's value is \t\t" << hex << newIntPtr << endl;
 	cout << "the value at the location of newIntPtr is\t" << dec << *newIntPtr << endl;
 
-	_getch();
+	cout << endl;
 
 	return 0;
 }
