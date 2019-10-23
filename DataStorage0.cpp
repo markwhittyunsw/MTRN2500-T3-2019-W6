@@ -4,7 +4,6 @@
 // Demonstrates how to change the data packing arrangement.
 
 #include <iostream>
-#include <conio.h>
 
 using namespace std;
 
@@ -57,7 +56,6 @@ int main()
 	cout << "sizeof(Data) is " << sizeof(Data) << " bytes." << endl;
 	cout << "sizeof(S) is " << sizeof(S) << " bytes." << endl;
 
-	_getch();
 	return 0;
 }
 
