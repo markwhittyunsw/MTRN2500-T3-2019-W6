@@ -1,3 +1,4 @@
+// Author: Jay Katiputiya and Mark Whitty
 // Demonstrates reading a binary data  file.
 
 #include <iostream>

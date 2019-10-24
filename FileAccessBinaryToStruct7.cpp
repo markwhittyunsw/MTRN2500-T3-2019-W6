@@ -1,3 +1,4 @@
+// Author: Jay Katiputiya and Mark Whitty
 // Demonstrates randomly accessing an object data set in a binary data file.
 
 #include <iostream>

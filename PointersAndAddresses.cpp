@@ -1,3 +1,4 @@
+// Author: Jay Katiputiya and Mark Whitty
 #include <iostream>
 #include <iomanip>
 

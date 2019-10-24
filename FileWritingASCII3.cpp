@@ -1,4 +1,5 @@
-// Demonstrates writing to a file.
+// Author: Jay Katiputiya and Mark Whitty
+// Demonstrates writing to an ASCII file.
 
 #include <iostream>
 #include <fstream>
@@ -80,7 +81,7 @@ int main()
 
 	for(int i = 0; i < SIZE; i++)
 	{
-		cout << S[i] << endl;
+		cout << S[i] << endl;  // Note similar stream usage to write to console vs file
 		os   << S[i] << endl;
 	}
 

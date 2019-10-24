@@ -1,4 +1,5 @@
-// Demonstrates reading from a file.
+// Author: Jay Katiputiya and Mark Whitty
+// Demonstrates writing binary data to a file.
 
 #include <iostream>
 #include <fstream>
@@ -25,6 +26,7 @@ public:
 	virtual Data GetD() const;
 	virtual void SetD(double a, float b, int c, char d);
 	friend ostream& operator<<(ostream& os, const Data& d);
+	friend ofstream& operator<<(ofstream& os, const Storage& d);
 	friend istream& operator>>(istream& is, Storage& d);
 };
 
@@ -68,6 +70,15 @@ ostream& operator<<(ostream& os, const Storage& d)
 	return os;
 }
 
+ofstream& operator<<(ofstream& os, const Storage& d)
+{
+	unsigned char * BytePtr = (unsigned char*)&d.D;
+	for(int i = 0; i < sizeof(d.D); i++)
+		os.put(*(BytePtr + i));
+
+	return os;
+}
+
 istream& operator>>(istream& is, Storage& d)
 {
 	double a;
@@ -81,6 +92,7 @@ istream& operator>>(istream& is, Storage& d)
 	d.D.C = c;
 	d.D.D = ch;
 
+
 	return is;
 }
 
@@ -91,27 +103,24 @@ ostream& sp(ostream& os)
 	return os;
 }
 
-#define SIZE 100
+#define SIZE 10
 
 int main()
 {
 	Storage S[SIZE];
 
-	ifstream is("ASCIIData.dat",ios::in);	
+	ofstream os("BinaryData.dat");	
 
-	int j = 0;
-	while (!is.eof())
+	for(int i = 0; i < SIZE; i++)
+		S[i] = Storage(1.0*i, -2.0f*i, 3*i, 'A'+i);
+
+	for(int i = 0; i < SIZE; i++)
 	{
-		is >> S[j++];
+		os << S[i];
 	}
 
-	for(int i = 0; i < j-1; i++)
-	{
-		cout << S[i] << endl;
-	}
 
-	cout << endl;
-	is.close();
+	os.close();
 
 	return 0;
 }
