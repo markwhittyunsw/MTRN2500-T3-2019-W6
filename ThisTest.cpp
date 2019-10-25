@@ -1,7 +1,7 @@
 // Author: Jay Katiputiya and Mark Whitty
 #include <iostream>
 #include <iomanip>
-#include <conio.h>
+
 
 using namespace std;
 
@@ -25,7 +25,7 @@ int ThisTest::testDataStatic; // This definition is needed for a static variable
 
 ThisTest::ThisTest() {
 	cout << "Address of this in constructor is \t" << hex << this << endl;
-	cout << "\'this\' simply returns the address of an object" << endl;
+	cout << "\'this\' simply returns a pointer to the object" << endl;
 };
 
 ThisTest::~ThisTest() {};
@@ -34,10 +34,14 @@ void ThisTest::setTestData(int value) {
 	this->testData = value;
 	testDataStatic = value;
 	cout << "Address of this in setTestData is \t" << hex << this << endl;
+	std::cin.get();  // Read a character from cin (just used for pausing the display)
+
 };
 void ThisTest::setTestDataStatic(int value) {
 	testDataStatic = value;
 	cout << "Address of testDataStatic is \t\t" << hex << &testDataStatic << endl;
+	std::cin.get();  // Read a character from cin (just used for pausing the display)
+
 };
 void ThisTest::setTestDataWithoutThis(int value) {
 	testData = value;
@@ -69,7 +73,8 @@ int main() {
 	cout << "Value of lectureToday.getTestDataStatic(): " << dec << lectureToday.getTestDataStatic() << endl;
 	cout << "Value of lectureTomorrow.getTestDataStatic(): " << dec << lectureTomorrow.getTestDataStatic() << endl;
 	cout << "Note the difference in behaviour of static and non-static data and also the address of static data" << endl << endl;
-	_getch();
+
+	std::cin.get();  // Read a character from cin (just used for pausing the display)
 
 	// Difference between stack and heap memory allocation
 	ThisTest *pointerToNewThisTest = new(ThisTest);
@@ -79,7 +84,8 @@ int main() {
 	cout << "Value of pointerToNewThisTest->getTestData()\t" << pointerToNewThisTest->getTestData() << endl;
 	cout << "Value of pointerToNewThisTest->getTestDataStatic()\t" << pointerToNewThisTest->getTestDataStatic() << endl;
 	cout << "Note the difference between addresses of items on the stack and on the heap" << endl << endl;
-	_getch();
+	
+	std::cin.get();  // Read a character from cin (just used for pausing the display)
 
 	// No difference between using 'this' and not in setters...
 	lectureToday.setTestDataWithoutThis(1);
@@ -99,7 +105,7 @@ int main() {
 	cout << "Value of pointerToNewThisTest2's TestData without this is\t" << pointerToNewThisTest2->getTestDataWithoutThis() << endl;
 	cout << "Hence, using \'this\' for non-static member data is fine." << endl;
 
-	_getch();
+	std::cin.get();  // Read a character from cin (just used for pausing the display)
 
 };
 
