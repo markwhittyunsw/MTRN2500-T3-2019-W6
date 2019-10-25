@@ -1,4 +1,4 @@
-// Author: Jay Katiputiya and Mark Whitty
+// Author: Jay Katupitiya and Mark Whitty
 // Demonstrates the formatted output to the standard output device.
 
 #include <iostream>

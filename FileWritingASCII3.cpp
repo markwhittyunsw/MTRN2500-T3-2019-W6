@@ -1,4 +1,4 @@
-// Author: Jay Katiputiya and Mark Whitty
+// Author: Jay Katupitiya and Mark Whitty
 // Demonstrates writing to an ASCII file.
 
 #include <iostream>

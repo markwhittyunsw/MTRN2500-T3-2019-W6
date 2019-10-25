@@ -1,4 +1,4 @@
-// Author: Jay Katiputiya and Mark Whitty
+// Author: Jay Katupitiya and Mark Whitty
 // Demonstrates reading from an ASCII file.
 
 #include <iostream>
@@ -103,6 +103,7 @@ int main()
 	int j = 0;
 	while (!is.eof())
 	{
+		// Where is the new object allocated?
 		is >> S[j++];
 	}
 

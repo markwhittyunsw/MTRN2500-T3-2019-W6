@@ -1,4 +1,4 @@
-// Author: Jay Katiputiya and Mark Whitty
+// Author: Jay Katupitiya and Mark Whitty
 // Demonstrates how data is packed in memory.
 // Compares the size of data and the size of objects.
 // Demonstrates the effect of virtual functions on object size.
